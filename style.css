@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1000px;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+nav {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2rem;
+    height: 15vh;
+    font-family: serif;
+    padding-top: 0.5rem;
+    border-bottom: 3px solid rgba(0, 0, 0, 0.377);
+}
+
+#product_info {
+    max-width: 450px;
+    width: auto; 
+    display: flex;
+    flex-direction: column;
+    float: right;  
+}
+
+#product_info p {
+    font-size: 1.3rem;
+}
+
+img {
+    width: 500px;
+    height: 300px;
+    border: 3px solid rgba(0, 0, 0, 0.123);
+}
+
+#btn {
+    border: none;
+    padding: 1rem;
+    width: auto;
+    font-size: 1.2rem;
+    background: #6db86d;
+    color: #ffffff;
+}

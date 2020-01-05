@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- 1. На странице есть некоторое краткое описание. 
+    В конце некоторый элемент (например, кнопка: 
+    «Подробнее») по нажатию на которое открывается 
+    скрытый текст, который делает данное описание полным. -->
+
+    <div id="app">
+        <nav>
+            {{navbar}}
+        </nav>
+        <div class="container">
+
+            <div id="product_info">
+                <h3 v-text="product.title"></h3>
+                <h2 v-text="product.info"></h2>
+                <p v-show="show" id="desc">{{product.description}}</p>
+                <button v-on:click='showHideText' v-if='show' id="btn">Скрыть характеристики</button>
+                <button v-on:click='showHideText' v-else='show' id="btn">Показать характеристики</button>
+                <p id="price">Стоимость: {{product.price}}$</p>
+            </div>
+            <div id="img">
+                <img v-bind:src="product.img">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                navbar: 'Интернет-магазин недорогих компьютеров и комплектующих',
+                show: false,
+                product: {
+                    title: 'Ноутбук HP Pavilion 13-an0063ur, 13.3", IPS, Intel Core i3 8145U 2.1ГГц, 4Гб, 128Гб SSD, Intel UHD Graphics 620, Windows 10, 5GX34EA, серебристый',
+                    img: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6352/6352587_sd.jpg",
+                    info: 'Основные характеристики',
+                    description: 'экран: 13.3, разрешение экрана: 1920×1080, процессор: Intel Core i3 8145U; частота: 2.1 ГГц (3.9 ГГц, в режиме Turbo); Intel UHD Graphics 620; WiFi; Bluetooth; HDMI; WEB-камера; Windows 10.',
+                    price: 350
+                }
+            },
+            methods: {
+                showHideText() {
+                    this.show = !this.show;
+                }
+            },
+        });
+    </script>
+
+</body>
+
+</html>
